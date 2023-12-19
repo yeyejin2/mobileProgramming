@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 라디오 버튼 -->
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioDog"
+                android:layout_width="199dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:buttonTint="#757CDC"
+                android:layout_margin="10dp"
+                android:text="강아지" />
+
+            <RadioButton
+                android:id="@+id/radioCat"
+                android:layout_width="205dp"
+                android:buttonTint="#757CDC"
+                android:layout_height="wrap_content"
+                android:text="고양이" />
+        </RadioGroup>
+
+        <!-- 기본 사진 창 및 이미지 버튼 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgView"
+                android:layout_width="243dp"
+                android:layout_height="333dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img" />
+
+            <ImageButton
+                android:id="@+id/btnImg"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/gallery" />
+        </LinearLayout>
+
+        <!-- 이름 입력 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="67dp"
+                android:layout_height="wrap_content"
+                android:text="이름:" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/editPetName"/>
+        </LinearLayout>
+
+        <!-- 성별 선택 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="66dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:text="성별:" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioFemale"
+                    android:layout_width="189dp"
+                    android:buttonTint="#757CDC"
+                    android:layout_height="wrap_content"
+                    android:text="여" />
+                <RadioButton
+                    android:id="@+id/radioMale"
+                    android:layout_width="164dp"
+                    android:buttonTint="#757CDC"
+                    android:layout_height="wrap_content"
+                    android:text="남" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- 중성화 여부 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="97dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="중성화 여부:" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioNeutered"
+                    android:layout_width="144dp"
+                    android:buttonTint="#757CDC"
+                    android:layout_height="wrap_content"
+                    android:text="중성화 O" />
+
+                <RadioButton
+                    android:id="@+id/radioNotNeutered"
+                    android:layout_width="172dp"
+                    android:buttonTint="#757CDC"
+                    android:layout_height="wrap_content"
+                    android:text="중성화 X" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- 품종 입력 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="품종:" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/editPetKind"/>
+        </LinearLayout>
+
+        <!-- 생일 입력 (DatePicker) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="생일:" />
+
+            <DatePicker
+                android:id="@+id/datePickerBirth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner" />
+        </LinearLayout>
+
+        <!-- 알러지 선택 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="알러지 종류:" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:columnCount="5">
+
+                <CheckBox
+                    android:id = "@+id/ch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#757CDC"
+                    android:text="소고기" />
+
+                <CheckBox
+                    android:id = "@+id/ch2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#757CDC"
+                    android:text="유제품" />
+
+                <CheckBox
+                    android:id = "@+id/ch3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#757CDC"
+                    android:text="닭고기" />
+
+                <CheckBox
+                    android:id = "@+id/ch4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#757CDC"
+                    android:text="밀" />
+
+                <CheckBox
+                    android:id = "@+id/ch5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#757CDC"
+                    android:text="대두" />
+
+                <CheckBox
+                    android:id = "@+id/ch6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#757CDC"
+                    android:text="양고기" />
+
+                <CheckBox
+                    android:id = "@+id/ch7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#757CDC"
+                    android:text="옥수수" />
+
+                <CheckBox
+                    android:id = "@+id/ch8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#757CDC"
+                    android:text="계란" />
+
+                <CheckBox
+                    android:id = "@+id/ch9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#757CDC"
+                    android:text="돼지" />
+
+                <CheckBox
+                    android:id = "@+id/ch10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#757CDC"
+                    android:text="생선" />
+
+                <CheckBox
+                    android:id = "@+id/ch11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#757CDC"
+                    android:text="쌀" />
+            </GridLayout>
+        </LinearLayout>
+
+        <!-- 저장 버튼 -->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="저장"
+            android:layout_gravity="center"
+            android:background="@drawable/button_round"
+            android:id="@+id/btnSave"/>
+    </LinearLayout>
+</ScrollView>
